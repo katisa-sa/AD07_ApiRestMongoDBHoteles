@@ -1,14 +1,17 @@
 package eus.dam.api.domain;
 
+import java.time.LocalDate;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 //Solo se incluirán en el JSON las propiedades que no sean nulas
@@ -22,6 +25,8 @@ import lombok.Data;
     "properties"
 })
 
+@Getter
+@Setter
 @Data
 @AllArgsConstructor
 @Document(collection="hotelData")

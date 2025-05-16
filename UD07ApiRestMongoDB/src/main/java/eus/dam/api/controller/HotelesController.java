@@ -20,7 +20,7 @@ import eus.dam.api.repository.HotelRepository;
 @CrossOrigin (origins= {"http://localhost:4200"})
 //@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("api")
 public class HotelesController {
 
 	
@@ -35,7 +35,8 @@ public class HotelesController {
 	public ResponseEntity<List<Hotel>> index() {
 	    try {
 	        List<Hotel> hotels = hotelRepository.findAll();
-	        return new ResponseEntity<List<Hotel>>(hotels, HttpStatus.OK);
+	        System.out.println("Hotels found: " + hotels.size());
+	        return new ResponseEntity<List<Hotel>>(hotels, HttpStatus.OK);	        
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        return new ResponseEntity<List<Hotel>>(HttpStatus.INTERNAL_SERVER_ERROR);
